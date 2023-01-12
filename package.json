@@ -1,0 +1,14 @@
+{
+  "name": "react_tdd",
+  "version": "1.0.0",
+  "description": "React TDD",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "yared",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.3.1"
+  }
+}

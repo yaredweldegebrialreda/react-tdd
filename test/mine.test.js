@@ -25,3 +25,9 @@ describe("Appointment", () => {
     expect(container.textContent).toContain("shemsu");
   });
 });
+
+// triangulation :removal of hardcoding for component props
+// notes
+// await new Promise(setTimeout);  // a way with out using act Nb: add async on about arroe function
+// using act
+// act(()=>ReactDom.createRoot(container).render(component))

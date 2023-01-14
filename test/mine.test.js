@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDom from "react-dom/client";
-import { Appointment } from "../src/pages/Appointment";
+import { Appointment } from "../src/Appointment";
 import { act } from "react-dom/test-utils";
 
 describe("Appointment", () => {

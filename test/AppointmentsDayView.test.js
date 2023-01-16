@@ -20,7 +20,6 @@ describe("Appointment", () => {
   it("renders the customer first name", () => {
     customer = { firstName: "Ashley" };
     render(<Appointment customer={customer} />);
-
     expect(document.body).toContainText("Ashley");
   });
 

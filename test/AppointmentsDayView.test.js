@@ -12,19 +12,30 @@ import {
 } from "./reactTestExtension";
 
 describe("Appointment", () => {
+  const blankCustomer = {
+    firstName: "",
+    lastName: "",
+    phoneNumber: "",
+  };
   let customer;
   beforeEach(() => {
     initializeReactContainer();
+  });
+  const appointmentTable = () => element("#appointmentView > table");
+  it("renders a table:", () => {
+    render(<Appointment customer={blankCustomer} />);
+    expect(document.body).not.toBeNull();
   });
 
   it("renders the customer first name", () => {
     customer = { firstName: "Ashley" };
     render(<Appointment customer={customer} />);
+    expect(document.body).not.toBeNull();
     expect(document.body).toContainText("Ashley");
   });
 
   it("renders the second customer's first name", () => {
-    customer = { firstName: "Jordan" };
+    const customer = { firstName: "Jordan" };
     render(<Appointment customer={customer} />);
     expect(document.body).toContainText("Jordan");
   });

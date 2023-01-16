@@ -1,8 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { AppointmentsDayView } from "./AppointmentsDayView.jsx";
+import { CustomForm } from "./CustomForm.jsx";
 import { sampleAppointments } from "./utils/sampleData.js";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(<AppointmentsDayView appointments={sampleAppointments} />);
+const blankCustomer = {
+  firstName: "",
+};
+root.render(<CustomForm original={blankCustomer} />);
+//root.render(<AppointmentsDayView appointments={sampleAppointments} />);

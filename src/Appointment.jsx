@@ -11,7 +11,6 @@ export const Appointment = ({
   notes,
   startsAt,
 }) => {
-  console.log(customer);
   return (
     <div>
       <h3>Today&rsquo;s appointment at {appointmentTimeOfTheDay(startsAt)}</h3>

@@ -1,2 +1,3 @@
 node_modules
 .vscodedist/main.js
+.DS_Store

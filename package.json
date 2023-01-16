@@ -23,7 +23,10 @@
     "testEnvironment": "jsdom",
     "globals": {
       "IS_REACT_ACT_ENVIRONMENT": true
-    }
+    },
+    "setupFilesAfterEnv": [
+      "./test/doMatchers.js"
+    ]
   },
   "dependencies": {
     "@babel/runtime": "^7.20.7",

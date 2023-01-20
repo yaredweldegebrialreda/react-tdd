@@ -26,11 +26,7 @@ export const field = (fieldName) => form().elements[fieldName];
 export const submitButton = () => element("input[type=submit]");
 const originalValueProperty = (reactElement) => {
   const prototype = Object.getPrototypeOf(reactElement);
-  return Object.getOwnPropertyDescriptor(
-    prototype,
-
-    "value"
-  );
+  return Object.getOwnPropertyDescriptor(prototype, "value");
 };
 
 export const change = (target, value) => {

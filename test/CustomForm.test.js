@@ -10,12 +10,14 @@ import {
   change,
   labelFor,
 } from "./reactTestExtension";
-import { CustomForm } from "../src/CustomForm.jsx";
+import { CustomForm } from "../src/components/CustomForm.jsx";
 
 describe("Custom form", () => {
   const customer = { firstName: "Ashley" };
   const blankCustomer = {
     firstName: "",
+    lastName: "",
+    phoneNumber: "",
   };
   beforeEach(() => {
     initializeReactContainer();
@@ -87,7 +89,7 @@ describe("Custom form", () => {
     });
   };
 
-  describe("first name field", () => {
+  describe("First name field", () => {
     itRendersAsATextBox("firstName");
     itIncludesTheExistingValue("firstName", "Ashley");
     itRendersLabelAndLabelContent("firstName", "First name");
@@ -98,5 +100,29 @@ describe("Custom form", () => {
     });
     itSubmitsExistingValue("firstName", "Ashley");
     itSubmitsNewValue("firstName", "");
+  });
+  describe("Last name field", () => {
+    itRendersAsATextBox("lastName");
+    itIncludesTheExistingValue("lastName", "Yared");
+    itRendersLabelAndLabelContent("lastName", "Last name");
+    itAssignsAnIdThatMatchesTheLabelId("lastName", "lastName");
+    it("renders a submit button", () => {
+      render(<CustomForm original={blankCustomer} />);
+      expect(submitButton()).not.toBeNull();
+    });
+    itSubmitsExistingValue("lastName", "Yared");
+    itSubmitsNewValue("lastName", "");
+  });
+  describe("Phone number field", () => {
+    itRendersAsATextBox("phoneNumber");
+    itIncludesTheExistingValue("phoneNumber", "0934826758");
+    itRendersLabelAndLabelContent("phoneNumber", "Phone number");
+    itAssignsAnIdThatMatchesTheLabelId("phoneNumber", "phoneNumber");
+    it("renders a submit button", () => {
+      render(<CustomForm original={blankCustomer} />);
+      expect(submitButton()).not.toBeNull();
+    });
+    itSubmitsExistingValue("phoneNumber", "0934826758");
+    itSubmitsNewValue("phoneNumber", "");
   });
 });

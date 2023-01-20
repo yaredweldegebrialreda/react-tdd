@@ -1,6 +1,6 @@
 import React from "react";
-import { Appointment } from "../src/Appointment";
-import { AppointmentsDayView } from "../src/AppointmentsDayView";
+import { Appointment } from "../src/pages/Appointment";
+import { AppointmentsDayView } from "../src/pages/AppointmentsDayView";
 import {
   render,
   click,
@@ -13,9 +13,16 @@ import {
 
 describe("Appointment", () => {
   const blankCustomer = {
-    firstName: "",
-    lastName: "",
-    phoneNumber: "",
+    customer: {
+      firstName: "",
+      lastName: "",
+      phoneNumber: "",
+    },
+
+    service: "",
+    stylist: "",
+    notes: "",
+    startsAt: "",
   };
   let customer;
   beforeEach(() => {
